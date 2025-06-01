@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
-import {faGithub} from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { CgNametag } from "react-icons/cg";
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
             <div className="flex h-14 items-center justify-between gap-6 px-4 sm:px-6">
                 <div>
                     <a href="#home" className="text-white font-mono text-2xl tracking-wider flex items-center">
-                        <CgNametag /> WACKY
+                        WACKY
                     </a>
                 </div>
                 <div className="lg:hidden">
@@ -44,6 +44,16 @@ const Navbar = () => {
                         <li>
                             <a href='https://github.com/Wacky-sama' target="_blank">
                                 <FontAwesomeIcon icon={faGithub} size='xl' style={{color: "white"}} />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/kenji.tabugadir.0124/" target="_blank">
+                                <FontAwesomeIcon icon={faFacebook} size='xl' style={{color: "white"}}/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/wackyfu/" target="_blank">
+                                <FontAwesomeIcon icon={faInstagram} size='xl' style={{color: "white"}}/>
                             </a>
                         </li>
                     </ul>

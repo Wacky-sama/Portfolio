@@ -1,6 +1,9 @@
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 const Contact = () => {
   return (
-    <section id="contact" className="py-16 bg-gray-100 px-4">
+    <section id="contact" className="py-16 px-4 bg-gradient-to-r from-blue-950 to-blue-600 text-white">
     <div className="max-w-2xl mx-auto text-center">
       <h3 className="text-3xl font-bold mb-6">Contact</h3>
       <form className="space-y-4">
