@@ -2,7 +2,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-16 bg-gray-100 px-4">
     <div className="max-w-2xl mx-auto text-center">
-      <h3 className="text-3xl font-bold mb-6">Get In Touch</h3>
+      <h3 className="text-3xl font-bold mb-6">Contact</h3>
       <form className="space-y-4">
         <input type="text" placeholder="Name" className="w-full p-3 border rounded" />
         <input type="email" placeholder="Email" className="w-full p-3 border rounded" />
@@ -16,4 +16,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Contact;
