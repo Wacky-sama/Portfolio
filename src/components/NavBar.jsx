@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { CgNametag } from "react-icons/cg";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,8 +13,27 @@ const Navbar = () => {
         setIsOpen(false);
     };
 
+    const [activeSection, setActiveSection] = useState('home');
+
+    useEffect(() => {
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver(
+        (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+            }
+        });
+        },
+        { threshold: 0.6 }
+    );
+
+    sections.forEach(section => observer.observe(section));
+    return () => observer.disconnect();
+    }, []);
+
     return (
-        <nav className="fixed bg-blue-950 w-full border-b-2 border-white-200">
+        <nav className="fixed w-full bg-blue-950 border-b-2 border-white-200 z-50">
             <div className="flex h-14 items-center justify-between gap-6 px-4 sm:px-6">
                 <div>
                     <a href="#home" className="text-white font-mono text-2xl tracking-wider flex items-center">
@@ -30,16 +48,41 @@ const Navbar = () => {
                 <div className={`lg:flex ${isOpen ? "block" : "hidden"} absolute lg:static bg-blue-950 w-full lg:w-auto top-16 right-0 lg:top-auto lg:right-auto`}>
                     <ul className="bg-blue-950 flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 p-4 lg:p-0">
                         <li>
-                            <a href="#home" className="text-white relative hover:text-blue-600">Home</a>
+                            <a
+                                href="#home"
+                                onClick={() => setActiveSection('home')}
+                                className={`relative hover:text-blue-400 duration-100 ${
+                                    activeSection === 'home' ? 'text-blue-400 font-semibold' : 'text-white'
+                                }`}>
+                                Home
+                            </a>
                         </li>
                         <li>
-                            <a href="#about" className="text-white relative hover:text-blue-600">About</a>
+                            <a href="#about" 
+                            onClick={() => setActiveSection('about')}
+                            className={`relative hover:text-blue-400 duration-100 ${
+                                activeSection === 'about' ? 'text-blue-400 font-semibold' : 'text-white'
+                            }`}>
+                                About
+                            </a>
                         </li>
                         <li>
-                            <a href="#contact" className="text-white relative hover:text-blue-600">Contact</a>
+                            <a href="#contact" 
+                            onClick={() => setActiveSection('contact')}
+                            className={`relative hover:text-blue-400 duration-100 ${
+                                activeSection === 'contact' ? 'text-blue-400 font-semibold' : 'text-white'
+                            }`}>
+                                Contact
+                            </a>
                         </li>
                         <li>
-                            <a href="#projects" className="text-white relative hover:text-blue-600">Projects</a>
+                            <a href="#projects" 
+                            onClick={() => setActiveSection('projects')}
+                            className={`relative hover:text-blue-400 duration-100 ${
+                                activeSection === 'projects' ? 'text-blue-400 font-semibold' : 'text-white'
+                            }`}>
+                                Projects
+                            </a>
                         </li>
                         <li>
                             <a href='https://github.com/Wacky-sama' target="_blank">
