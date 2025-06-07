@@ -1,10 +1,12 @@
+import { useState } from "react";
 import LoadingScreen from "./components/LoadingScreen";
 import Navbar from "./components/NavBar";
 import HeroSection from "./components/HeroSection";
 import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
-import { useState } from "react";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -16,6 +18,7 @@ function App() {
       <HeroSection />
       <AboutMe />
       <Contact />
+      <ToastContainer position="top-center" autoClose={3000} theme="colored" />
     </>
   )
 }

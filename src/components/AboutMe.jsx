@@ -12,8 +12,8 @@ const AboutMe = () => {
               <p className="text-sm text-white/50">Cagayan State University | 2022-2026</p>
           </div>
           <div>
-              <p className="font-bold">1st Place Dynamic Web Design</p>
-              <p className="text-sm text-white/50">Uniwide ICT Skills Olympics CSU | 2025</p>
+              <p className="font-bold">Champion Dynamic Web Designing</p>
+              <p className="text-sm text-white/50">Technolympics | 2025</p>
           </div>
         </div>
     </div>
