@@ -15,6 +15,7 @@ const Contact = () => {
     .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, formRef.current, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
     .then(
       (result) => {
+        console.log(result.text);
         toast.success('Message sent successfully!');
         formRef.current.reset();
         setIsLoading(false);
@@ -28,14 +29,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 px-4 bg-gradient-to-r from-blue-950 to-blue-600 text-white">
+    <section id="contact" className="py-16 px-4 bg-gradient-to-r from-purple-950 to-purple-600 text-white">
     <div className="max-w-2xl mx-auto text-center">
       <h3 className="text-3xl font-bold mb-6">Contact</h3>
       <form ref={formRef} onSubmit={sendEmail} className="space-y-4">
           <input name="user_name" type="text" placeholder="Name" className="w-full p-3 border rounded " required />
           <input name="user_email" type="email" placeholder="Email" className="w-full p-3 border rounded " required />
           <textarea name="message" rows="4" placeholder="Message" className="w-full p-3 border rounded " required />
-          <button type="submit" disabled={loading} className="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700">
+          <button type="submit" disabled={loading} className="bg-purple-600 text-white px-6 py-2 rounded shadow hover:bg-purple-700">
             {loading ? 'Sending...' : 'Send Message'}
           </button>
       </form>

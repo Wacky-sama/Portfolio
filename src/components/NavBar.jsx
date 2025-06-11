@@ -33,7 +33,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="fixed w-full bg-blue-950 border-b-2 border-white-200 z-50">
+        <nav className="fixed w-full bg-purple-950 border-b-2 border-white-200 z-50">
             <div className="flex h-14 items-center justify-between gap-6 px-4 sm:px-6">
                 <div>
                     <a href="#home" className="text-white font-mono text-2xl tracking-wider flex items-center">
@@ -45,8 +45,8 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={isOpen ? faXmark : faBars} size='xl' style={{ color: "white" }} />
                     </button>
                 </div>
-                <div className={`lg:flex ${isOpen ? "block" : "hidden"} absolute lg:static bg-blue-950 w-full lg:w-auto top-16 right-0 lg:top-auto lg:right-auto`}>
-                    <ul className="bg-blue-950 flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 p-4 lg:p-0">
+                <div className={`lg:flex ${isOpen ? "block" : "hidden"} absolute lg:static bg-purple-950 w-full lg:w-auto top-16 right-0 lg:top-auto lg:right-auto`}>
+                    <ul className="bg-purple-950 flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 p-4 lg:p-0">
                         <li>
                             <a
                                 href="#home"
