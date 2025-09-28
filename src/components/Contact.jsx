@@ -113,7 +113,7 @@ const Contact = () => {
                 className={`flex mx-auto px-6 py-2 rounded-full shadow-lg text-lg transition ${
                   loading
                     ? "bg-gray-500 cursor-not-allowed"
-                    : "bg-yellow-500 hover:bg-yellow-600 text-black"
+                    : "bg-[#1a3afd] hover:bg-[#0018b6] text-white"
                 }`}
               >
                 {loading ? "Sending..." : "Send Message"}

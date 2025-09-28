@@ -11,7 +11,7 @@ const AboutMe = () => {
         <div className="flex gap-10 flex-col sm:flex-row items-start">
           <p className="text-lg leading-relaxed sm:w-1/2">
             I’m{" "}
-            <span className="font-semibold text-yellow-400">
+            <span className="font-semibold text-[#1a3afd]">
               Kenji "Brocks" I. Tabugadir
             </span>
             , a Linux enthusiast with an addiction to building{" "}
