@@ -20,7 +20,7 @@ function App() {
       <Contact />
       <ToastContainer position="top-center" autoClose={3000} theme="colored" />
     </>
-  )
+  );
 }
 
 export default App;
