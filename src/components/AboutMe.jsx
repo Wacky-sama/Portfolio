@@ -2,7 +2,7 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="py-16 px-4 bg-gradient-to-r from-purple-950 to-purple-600 text-white"
+      className="py-28 px-4 bg-gradient-to-r from-purple-950 to-purple-600 text-white scroll-mt-20"
     >
       <div className="container mx-auto">
         <h3 className="text-3xl font-bold mb-6 text-center sm:text-left">
