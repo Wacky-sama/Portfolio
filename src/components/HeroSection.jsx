@@ -1,3 +1,5 @@
+import profilePic from "../public/android-chrome-192x192.png";
+
 const HeroSection = () => {
   return (
     <section
@@ -35,8 +37,8 @@ const HeroSection = () => {
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
           <img
             className="object-cover object-center rounded"
-            alt="picture"
-            src="../public/android-chrome-192x192.png"
+            alt="Profile Picture"
+            src={profilePic}
           />
         </div>
       </div>
