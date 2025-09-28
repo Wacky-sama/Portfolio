@@ -34,7 +34,7 @@ const HeroSection = () => {
             </a>
           </div>
         </div>
-        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mx-auto md:mx-0 md:ml-8 flex justify-center md:justify-start">
           <img
             className="object-cover object-center rounded"
             alt="Profile Picture"
