@@ -1,4 +1,4 @@
-import profilePic from "../public/android-chrome-192x192.png";
+import profilePic from "../../public/android-chrome-192x192.png";
 
 const HeroSection = () => {
   return (
