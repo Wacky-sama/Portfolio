@@ -19,15 +19,14 @@ const Contact = () => {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
-        (result) => {
-          console.log(result.text);
+        () => {
           toast.success("Message sent successfully!");
           formRef.current.reset();
           setIsLoading(false);
         },
         (error) => {
-          toast.error("Failed to send message, please try again later.");
           console.error(error.text);
+          toast.error("Failed to send message, please try again later.");
           setIsLoading(false);
         }
       );
@@ -38,60 +37,90 @@ const Contact = () => {
       id="contact"
       className="py-16 px-4 bg-gradient-to-r from-purple-950 to-purple-600 text-white"
     >
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 py-12 mx-auto">
         <div className="flex flex-col text-center w-full mb-12">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">
-            Contact
-          </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base"></p>
+          <h1 className="sm:text-4xl text-3xl font-bold mb-4">Get in Touch</h1>
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-white/80">
+            Have a project in mind, want to collaborate, or just say hello? Drop
+            me a message below and I’ll get back to you soon.
+          </p>
         </div>
-        <div className="lg:w-1/2 md:w-2/3 mx-auto">
+
+        <form
+          ref={formRef}
+          onSubmit={sendEmail}
+          className="lg:w-1/2 md:w-2/3 mx-auto"
+        >
           <div className="flex flex-wrap -m-2">
+            {/* Name */}
             <div className="p-2 w-1/2">
               <div className="relative">
-                <label for="name" className="leading-7 text-sm text-gray-400">
+                <label
+                  htmlFor="name"
+                  className="leading-7 text-sm text-gray-300"
+                >
                   Name
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  required
+                  className="w-full bg-gray-900/60 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-500 text-base outline-none text-white py-2 px-3 leading-8 transition-colors duration-200"
                 />
               </div>
             </div>
+
             <div className="p-2 w-1/2">
               <div className="relative">
-                <label for="email" className="leading-7 text-sm text-gray-400">
+                <label
+                  htmlFor="email"
+                  className="leading-7 text-sm text-gray-300"
+                >
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  required
+                  className="w-full bg-gray-900/60 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-500 text-base outline-none text-white py-2 px-3 leading-8 transition-colors duration-200"
                 />
               </div>
             </div>
+
             <div className="p-2 w-full">
               <div className="relative">
-                <label for="message" className="leading-7 text-sm text-gray-400">
+                <label
+                  htmlFor="message"
+                  className="leading-7 text-sm text-gray-300"
+                >
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                  required
+                  className="w-full bg-gray-900/60 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-500 h-32 text-base outline-none text-white py-2 px-3 resize-none leading-6 transition-colors duration-200"
                 ></textarea>
               </div>
             </div>
+
             <div className="p-2 w-full">
-              <button type="submit" className="flex mx-auto bg-purple-600 text-white px-6 py-2 rounded shadow hover:bg-purple-700">
-                Send
+              <button
+                type="submit"
+                disabled={loading}
+                className={`flex mx-auto px-6 py-2 rounded-full shadow-lg text-lg transition ${
+                  loading
+                    ? "bg-gray-500 cursor-not-allowed"
+                    : "bg-yellow-500 hover:bg-yellow-600 text-black"
+                }`}
+              >
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </section>
   );
