@@ -2,7 +2,7 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="py-20 px-4 bg-gradient-to-r from-purple-950 to-purple-600 text-white scroll-mt-20"
+      className="py-28 px-4 bg-gradient-to-r from-purple-950 to-purple-600 text-white scroll-mt-20"
     >
       <div className="container mx-auto">
         <h3 className="text-3xl font-bold mb-10 text-center sm:text-left">
@@ -26,9 +26,7 @@ const AboutMe = () => {
             technology every day.
           </p>
 
-          {/* Right side - Details */}
           <div className="flex flex-col gap-8">
-            {/* Education */}
             <div>
               <p className="font-bold text-lg">
                 Bachelor of Science in Information Technology
@@ -38,7 +36,6 @@ const AboutMe = () => {
               </p>
             </div>
 
-            {/* Achievement */}
             <div>
               <p className="font-bold text-lg">
                 Champion, Dynamic Web Designing
@@ -46,7 +43,6 @@ const AboutMe = () => {
               <p className="text-sm text-white/70">Technolympics | 2025</p>
             </div>
 
-            {/* Skills */}
             <div>
               <p className="font-bold text-lg mb-3">Skills & Tools</p>
 

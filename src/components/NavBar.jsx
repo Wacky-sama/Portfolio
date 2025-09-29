@@ -90,19 +90,6 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="#contact"
-                onClick={() => setActiveSection("contact")}
-                className={`relative hover:text-blue-400 duration-100 ${
-                  activeSection === "contact"
-                    ? "text-blue-400 font-semibold"
-                    : "text-white"
-                }`}
-              >
-                Contact
-              </a>
-            </li>
-            <li>
-              <a
                 href="#projects"
                 onClick={() => setActiveSection("projects")}
                 className={`relative hover:text-blue-400 duration-100 ${
@@ -112,6 +99,19 @@ const Navbar = () => {
                 }`}
               >
                 Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                onClick={() => setActiveSection("contact")}
+                className={`relative hover:text-blue-400 duration-100 ${
+                  activeSection === "contact"
+                    ? "text-blue-400 font-semibold"
+                    : "text-white"
+                }`}
+              >
+                Contact
               </a>
             </li>
             <li>
