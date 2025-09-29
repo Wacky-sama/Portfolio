@@ -124,10 +124,7 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a
-                href="https://www.facebook.com/kenji.tabugadir.0124/"
-                target="_blank"
-              >
+              <a href="https://www.facebook.com/Wackyfu/" target="_blank">
                 <FontAwesomeIcon
                   icon={faFacebook}
                   size="xl"
